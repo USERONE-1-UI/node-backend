@@ -20,6 +20,14 @@ const drive = google.drive({ version: 'v3', auth });
 
 const fs = require('fs');
 
+const uploadDir = 'uploads';
+
+// Ensure the uploads directory exists
+if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir);
+    console.log(`Created directory: ${uploadDir}`);
+}
+
 async function uploadToGoogleDrive(filePath, fileName) {
     const fileMetadata = {
         name: fileName,
