@@ -8,6 +8,7 @@ const path = require('path');
 
 // Load the service account credentials
 //const KEY_FILE_PATH = path.join(__dirname, 'service-account/node-backend-458115-4d45118620d0.json');
+
 const KEY_FILE_PATH = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
 
